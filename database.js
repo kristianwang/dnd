@@ -1,15 +1,8 @@
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/monsterdb";
+var fs = require('fs');
+var text = fs.readFileSync('monsters.json','utf8');
 
-MongoClient.connect(url, function(err,db){
-	if (err) throw err;
-	var monsters = JSON.parse("monsters.json");
-	db.collection("monsters").insertMany(monsters, function(err, res){
-	    if (err) throw err;
-	    console.log("Num monsters inserted " + res.insertedCount);
-	    db.close();
+var monsterJSON = JSON.parse(text);
+for(var i = 0; i < monsterJSON.length; i++){
+    console.log(monsterJSON[i].name);
+}
 
-	});
-
-
-});

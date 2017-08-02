@@ -15,6 +15,17 @@ var url = "mongodb://localhost:27017/monsterdb";
 app.get('/', function(req, res){
 	res.sendFile("index.html");
 });
+app.get('/getAllMonsters',function(req, res){
+    MongoClient.connect(url,function(err, db){
+        db.collection("monsters").find().toArray(
+	function(err, result){
+	  if(err) throw err;
+	  res.send(result);
+	  db.close();
+	});
+    });
+});
+
 app.get('/getMonster/:monster_name',function(req,res){
     var monster_name = req.params.monster_name;
     console.log('getting monster: ' + monster_name);
