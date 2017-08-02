@@ -1,0 +1,25 @@
+{
+  "name": "dnd_generator",
+  "version": "1.0.0",
+  "description": "a dnd instance generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristianwang/dnd.git"
+  },
+  "keywords": [
+    "dnd"
+  ],
+  "author": "kristian wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kristianwang/dnd/issues"
+  },
+  "homepage": "https://github.com/kristianwang/dnd#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
